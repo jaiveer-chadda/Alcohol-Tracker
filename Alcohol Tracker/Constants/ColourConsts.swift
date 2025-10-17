@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
 
 
 let INTERNAL_CALENDAR_MARGIN_HOR: CGFloat = 25.0
