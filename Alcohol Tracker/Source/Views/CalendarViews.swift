@@ -11,6 +11,8 @@ import Foundation
 
 
 struct DayIconView: View {
+//    @Environment(\.colorScheme) var colorScheme
+    
     var year: Int
     var month: Int
     var day: Int
@@ -23,17 +25,22 @@ struct DayIconView: View {
             ZStack {
                 Circle()
                     // this foregroundStyle is temp
+                    //      (waiting until there's actual data to display)
                     .foregroundStyle(day <= CURRENT_DAY ? DRINK_COLOURS[Int.random(in: 0...DRINK_COLOURS.count-1)] : CALENDAR_BACKGROUND_COLOUR)
                     .aspectRatio(1, contentMode: .fill) // there's something weird going on with this aspect ratio - may have to change it later
                 
+                /* Highlight today's date with a circle around it */
                 if day == CURRENT_DAY {
                     Circle()
                         .stroke(lineWidth: 2)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(TODAY_BORDER_COLOUR)
                 }
                 
+                
+                    
                 Text(String(day))
-                    .foregroundStyle(NORMAL_DAY_COLOUR)
+                    .foregroundStyle(day <= CURRENT_DAY ? .black : NORMAL_DAY_COLOUR)
+                
             }
             
         }

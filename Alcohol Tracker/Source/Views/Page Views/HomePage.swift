@@ -40,6 +40,7 @@ struct HomePageView: View {
             
             Spacer()
     
+            // placeholder for actual logo
             Text("Alcohol Tracker")
                 .font(Font.largeTitle.bold())
                 .padding(.bottom)
