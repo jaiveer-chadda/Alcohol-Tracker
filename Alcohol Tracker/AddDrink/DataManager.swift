@@ -71,13 +71,13 @@ struct AddDrinkFormView: View {
 //    @State private var date = Date()
     
     var body: some View {
-        NavigationView {
-            VStack {
+//        NavigationView {
+//            VStack {
                 Form {
                     TextField("Name", text: $name)
 //                    DatePicker("Date", selection: $date)
                     TextField("Value 1", text: $value1)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
 //                    TextField("Value 2", text: $value2)
 //                        .keyboardType(.decimalPad)
                     
@@ -108,8 +108,8 @@ struct AddDrinkFormView: View {
 //                    }
 //                    .onDelete(perform: dataManager.deleteEntry)
 //                }
-            }
-        }
+//            }
+//        }
     }
 }
 
