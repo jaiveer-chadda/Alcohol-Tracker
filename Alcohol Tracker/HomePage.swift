@@ -9,25 +9,25 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-//        VStack {
-//            
-//            Spacer()
-//            
-//            CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
-//
-//            Spacer()
-//            
+        VStack {
+            
+            Spacer()
+            
+            CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
+
+            Spacer()
+            
 //            WeeklyOverviewView()
-//            
-//            Spacer()
-//            
-//            AddDrinkButtonView()
-//            
-//            Spacer()
-//                        
-//        }
+            
+            Spacer()
+            
+            AddDrinkButtonView()
+            
+            Spacer()
+                        
+        }
         
-        ContentView()
+        AddDrinkFormView()
         
     }
 }

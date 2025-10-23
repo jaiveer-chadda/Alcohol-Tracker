@@ -63,7 +63,7 @@ class DataManager: ObservableObject {
 }
 
 
-struct ContentView: View {
+struct AddDrinkFormView: View {
     @StateObject private var dataManager = DataManager()
     @State private var name = ""
     @State private var value1 = ""
@@ -109,7 +109,6 @@ struct ContentView: View {
 //                    .onDelete(perform: dataManager.deleteEntry)
 //                }
             }
-            .navigationTitle("My Entries")
         }
     }
 }
