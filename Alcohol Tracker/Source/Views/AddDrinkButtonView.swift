@@ -33,7 +33,7 @@ struct AddDrinkButton: View {
                 .frame(width: 300, height: 80)
         }
         .sheet(isPresented: $isShowAddDrinkButtonView) {
-            AddDrinkView(isShowAddButtonView: $isShowAddDrinkButtonView)
+            AddDrinkPageView(isShowAddButtonView: $isShowAddDrinkButtonView)
         }
         .buttonStyle(AddDrinkButtonStyle())
 

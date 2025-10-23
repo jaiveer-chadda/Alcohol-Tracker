@@ -1,5 +1,5 @@
 //
-//  AddDrinkView.swift
+//  AddDrinkPage.swift
 //  Alcohol Tracker
 //
 //  Created by Jaiveer Chadda on 23/10/2025.
@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-//struct AddDrinkView: View {
+//struct AddDrinkPageView: View {
 //    @StateObject private var dataManager = DataManager()
 //    @State private var name = ""
 //    @State private var value1 = ""
@@ -60,7 +60,7 @@ import Foundation
 //}
 
 
-struct AddDrinkView: View {
+struct AddDrinkPageView: View {
     @Binding var isShowAddButtonView: Bool
     
     var body: some View {
