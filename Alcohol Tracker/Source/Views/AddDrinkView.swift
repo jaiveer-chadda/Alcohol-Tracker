@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-struct AddDrinkFormView: View {
+struct AddDrinkView: View {
     @StateObject private var dataManager = DataManager()
     @State private var name = ""
     @State private var value1 = ""
@@ -58,3 +58,21 @@ struct AddDrinkFormView: View {
         //        }
     }
 }
+
+
+struct AddDrinkViewTemp: View {
+    @Binding var isShowAddButtonView: Bool
+    
+    var body: some View {
+        VStack {
+            Text("View 2")
+                .font(.system(size: 50, weight: .bold))
+                .onTapGesture {
+                    isShowAddButtonView.toggle()
+                }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.yellow)
+    }
+}
+
