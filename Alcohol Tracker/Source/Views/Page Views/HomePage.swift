@@ -34,7 +34,7 @@ import SwiftUI
 ///             - (the calendar view, etc. can be done later)
 
 
-struct HomePage: View {
+struct HomePageView: View {
     var body: some View {
         VStack {
             
@@ -61,5 +61,5 @@ struct HomePage: View {
 }
 
 #Preview {
-    HomePage()
+    HomePageView()
 }
