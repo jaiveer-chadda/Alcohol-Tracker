@@ -22,13 +22,18 @@ struct AddDrinkButtonStyle: ButtonStyle {
 
 
 struct AddDrinkButtonView: View {
+    @State var isShowView2: Bool = false
+    
     var body: some View {
         
         Button {
-            // Action
+            isShowView2.toggle()
         } label: {
             Text("Add Drink")
                 .frame(width: 300, height: 80)
+        }
+        .sheet(isPresented: $isShowView2) {
+            AddDrinkView(isShowAddButtonView: $isShowView2)
         }
         .buttonStyle(AddDrinkButtonStyle())
 

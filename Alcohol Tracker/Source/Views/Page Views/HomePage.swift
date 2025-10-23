@@ -37,15 +37,16 @@ import SwiftUI
 
 struct HomePageView: View {
     var body: some View {
+        
         VStack {
             
             Spacer()
-    
+            
             // placeholder for actual logo
             Text("Alcohol Tracker")
                 .font(Font.largeTitle.bold())
                 .padding(.bottom)
-    
+            
             Spacer()
             
             CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
@@ -57,8 +58,9 @@ struct HomePageView: View {
             Spacer()
             
             AddDrinkButtonView()
-                        
+                
         }
+        
     }
 }
 
