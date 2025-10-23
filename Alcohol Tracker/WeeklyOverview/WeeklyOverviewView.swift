@@ -19,7 +19,7 @@ struct WeeklyOverviewView: View {
             Text("Weekly Overview")
         }
         .cornerRadius(30)
-        .padding(EdgeInsets(top: 40, leading: 20, bottom: 20, trailing: 20))
+        .padding(EdgeInsets(top: 20, leading: LEFT_RIGHT_MARGIN, bottom: 20, trailing: LEFT_RIGHT_MARGIN))
     }
     
 }

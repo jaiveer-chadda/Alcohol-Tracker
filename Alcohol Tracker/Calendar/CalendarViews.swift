@@ -127,7 +127,8 @@ struct CalendarView: View {
             }
             
         }
-        .frame(maxWidth: .infinity, maxHeight: 250)
+        .frame(maxHeight: 250)
+        .padding(EdgeInsets(top: CAL_MARGIN_END, leading: LEFT_RIGHT_MARGIN, bottom: CAL_MARGIN_END, trailing: LEFT_RIGHT_MARGIN))
         
     }
 }

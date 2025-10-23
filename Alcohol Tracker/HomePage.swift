@@ -38,13 +38,11 @@ struct HomePage: View {
     var body: some View {
         VStack {
             
-//            Spacer()
             
             CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
-                .padding(EdgeInsets(top: CAL_MARGIN_END, leading: 20, bottom: CAL_MARGIN_END, trailing: 20))
 
 //            Spacer()
-//            
+//
 //            WeeklyOverviewView()
 //            
 //            Spacer()
@@ -56,6 +54,13 @@ struct HomePage: View {
 //            AddDrinkFormView()
                         
         }
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
         
         
     }
