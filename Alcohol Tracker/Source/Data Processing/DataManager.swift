@@ -29,7 +29,6 @@ class DataManager: ObservableObject {
     
     init() {
         loadEntries()
-        print("Documents directory:", getFileURL().path)
     }
     
     func addEntry(_ entry: Entry) {

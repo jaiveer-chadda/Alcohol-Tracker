@@ -67,7 +67,6 @@ func emptyCalendar() -> Void {
 
 func populateCalendar(year: Int, month: Int) -> Void {
     emptyCalendar()
-    //    print("a")
     
     let FIRST_DAY_OF_MONTH: Int = getFirstDayOfMonth(year: year, month: month)
     let DAYS_IN_MONTH: Int = daysIn(month: month, year: year)
@@ -82,7 +81,6 @@ func populateCalendar(year: Int, month: Int) -> Void {
             column = 0
         }
         // I know this looks like magic or insanity, but it's an easy way I calculated to flatten a row and column value into a single number
-        print(row, column)
         calendarMatrix[row][column] = (7*row) + column + 1 - FIRST_DAY_OF_MONTH
     }
     
