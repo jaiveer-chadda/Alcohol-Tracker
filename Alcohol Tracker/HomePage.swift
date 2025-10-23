@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomePage.swift
 //  Alcohol Tracker
 //
 //  Created by Jaiveer Chadda on 17/10/2025.
@@ -9,16 +9,26 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-        VStack {
-            
-            
-            
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+//        VStack {
+//            
+//            Spacer()
+//            
+//            CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
+//
+//            Spacer()
+//            
+//            WeeklyOverviewView()
+//            
+//            Spacer()
+//            
+//            AddDrinkButtonView()
+//            
+//            Spacer()
+//                        
+//        }
+        
+        ContentView()
+        
     }
 }
 
