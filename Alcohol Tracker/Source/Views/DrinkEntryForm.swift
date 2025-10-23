@@ -10,6 +10,8 @@ import Foundation
 
 
 struct DrinkEntryForm: View {
+    @Binding var isShowAddButtonView: Bool
+    
     @StateObject private var dataManager = DataManager()
     @State private var drinkName = ""
     @State private var volume = ""
@@ -42,6 +44,7 @@ struct DrinkEntryForm: View {
                         
                     )
                     dataManager.addEntry(newEntry)
+                    isShowAddButtonView = false
                     
                     drinkName = ""
                     volume = ""

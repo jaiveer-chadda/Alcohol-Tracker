@@ -41,8 +41,7 @@ struct AddDrinkPageView: View {
     var body: some View {
         VStack {
             AddDrinkPageTopBar(isShowAddButtonView: $isShowAddButtonView)
-            
-            DrinkEntryForm()
+            DrinkEntryForm(isShowAddButtonView: $isShowAddButtonView)
             
             Spacer()
             
