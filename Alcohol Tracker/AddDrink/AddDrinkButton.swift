@@ -12,9 +12,10 @@ import Foundation
 struct AddDrinkButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding()
-            .background(Color(UIColor(143, 109, 196)))
-            .foregroundStyle(.white)
+//            .padding()
+            .font(Font.system(size: 40, weight: .bold))
+            .background(Color(ADD_DRINK_BUTTON_COLOUR))
+            .foregroundColor(.white)
             .clipShape(Capsule())
     }
 }
@@ -27,14 +28,10 @@ struct AddDrinkButtonView: View {
             // Action
         } label: {
             Text("Add Drink")
-                .font(Font.system(size: 40, weight: .bold))
                 .frame(width: 300, height: 80)
-                .background(Color(UIColor(143, 109, 196)))
-                .foregroundColor(.white)
-                .cornerRadius(.infinity)
-//                .padding(EdgeInsets(top: 50, leading: 0, bottom: 20, trailing: 0))
-                .padding()
         }
+        .buttonStyle(AddDrinkButtonStyle())
+
 
     }
 }

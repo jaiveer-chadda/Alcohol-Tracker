@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-
-let INTERNAL_CALENDAR_MARGIN_HOR: CGFloat = 25.0
-let INTERNAL_CALENDAR_MARGIN_VER: CGFloat = 30.0
-let GAP_BETWEEN_DAYS_AND_NUMS: CGFloat = 10.0
-
-let CAL_MARGIN_END: CGFloat = INTERNAL_CALENDAR_MARGIN_VER+GAP_BETWEEN_DAYS_AND_NUMS/2
-
 let NORMAL_DAY_COLOUR: Color = .black
 let TODAY_COLOUR: Color = .red
 let WEEKEND_COLOUR: Color = .gray
@@ -28,4 +21,7 @@ let DRINK_COLOURS: [Color] = [
     Color(UIColor(214, 31, 31))
 ]
 
-let CALENDAR_BACKGROUND_COLOUR: Color = Color(UIColor(200, 200, 200))
+let ADD_DRINK_BUTTON_COLOUR: Color = Color(UIColor(143, 109, 196))
+
+let CALENDAR_BACKGROUND_COLOUR: Color = Color(UIColor(gray: 200))
+let OVERVIEW_BACKGROUND_COLOUR: Color = Color(UIColor(gray: 150))

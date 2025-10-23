@@ -38,31 +38,25 @@ struct HomePage: View {
     var body: some View {
         VStack {
             
+            Spacer()
+    
+            Text("Alcohol Tracker")
+                .font(Font.largeTitle.bold())
+                .padding(.bottom)
+    
+            Spacer()
             
             CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
-
-//            Spacer()
-//
-//            WeeklyOverviewView()
-//            
-//            Spacer()
-//            
-////            AddDrinkButtonView()
-//            
-//            Spacer()
             
-//            AddDrinkFormView()
+            Spacer()
+            
+            WeeklyOverviewView()
+            
+            Spacer()
+            
+            AddDrinkButtonView()
                         
         }
-        .frame(
-            minWidth: 0,
-            maxWidth: .infinity,
-            minHeight: 0,
-            maxHeight: .infinity,
-            alignment: .topLeading
-        )
-        
-        
     }
 }
 

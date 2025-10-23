@@ -14,11 +14,12 @@ struct WeeklyOverviewView: View {
     var body: some View {
         
         ZStack {
-            Color(.gray)
+            RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                .fill(Color(OVERVIEW_BACKGROUND_COLOUR))
             
             Text("Weekly Overview")
         }
-        .cornerRadius(30)
+        .frame(maxHeight: 200)
         .padding(EdgeInsets(top: 20, leading: LEFT_RIGHT_MARGIN, bottom: 20, trailing: LEFT_RIGHT_MARGIN))
     }
     
