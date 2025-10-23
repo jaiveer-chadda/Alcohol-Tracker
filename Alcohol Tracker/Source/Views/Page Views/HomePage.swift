@@ -57,7 +57,7 @@ struct HomePageView: View {
             
             Spacer()
             
-            AddDrinkButtonView()
+            AddDrinkButton()
                 
         }
         
