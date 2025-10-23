@@ -110,22 +110,24 @@ struct CalendarView: View {
 //        print("b")
         
         ZStack {
-            Color(CALENDAR_BACKGROUND_COLOUR)
+            
+            RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                .fill(Color(CALENDAR_BACKGROUND_COLOUR))
+                
             VStack {
-                Spacer().frame(height: INTERNAL_CALENDAR_MARGIN_VER)
 
                 /* Days of the week labels */
                 DaysOfWeekLabelsView()
-                Spacer().frame(height: GAP_BETWEEN_DAYS_AND_NUMS)
+                    .padding(.top, INTERNAL_CALENDAR_MARGIN_VER)
+                    .padding(.bottom, GAP_BETWEEN_DAYS_AND_NUMS)
                 
                 /* Actual dates in the month */
                 MonthDatesView(year: year, month: month)
-                Spacer().frame(height: INTERNAL_CALENDAR_MARGIN_VER)
+                    .padding(.bottom, INTERNAL_CALENDAR_MARGIN_VER)
             }
+            
         }
-        .cornerRadius(30)
-        .frame(maxHeight: 250)
-        .padding(EdgeInsets(top: INTERNAL_CALENDAR_MARGIN_VER+20, leading: 20, bottom: 20, trailing: 20))
+        .frame(maxWidth: .infinity, maxHeight: 250)
         
     }
 }
