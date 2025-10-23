@@ -9,39 +9,38 @@ import SwiftUI
 import Foundation
 
 
-<<<<<<< HEAD
-struct AddDrinkView: View {
-    @StateObject private var dataManager = DataManager()
-    @State private var name = ""
-    @State private var value1 = ""
-    //    @State private var value2 = ""
-    //    @State private var date = Date()
-    
-    var body: some View {
-        //        NavigationView {
-        //            VStack {
-        Form {
-            TextField("Name", text: $name)
-            //                    DatePicker("Date", selection: $date)
-            TextField("Value 1", text: $value1)
-                .keyboardType(.numberPad)
-            //                    TextField("Value 2", text: $value2)
-            //                        .keyboardType(.decimalPad)
-            
-            Button("Save Entry") {
-                let newEntry = Entry(
-                    id: UUID(),
-                    name: name,
-                    //                            date: date,
-                    value1: Int(value1) ?? 0,
-                    //                            value2: Double(value2) ?? 0,
-                )
-                dataManager.addEntry(newEntry)
-                name = ""
-                value1 = ""
-                //                        value2 = ""
-            }
-        }
+//struct AddDrinkView: View {
+//    @StateObject private var dataManager = DataManager()
+//    @State private var name = ""
+//    @State private var value1 = ""
+//    //    @State private var value2 = ""
+//    //    @State private var date = Date()
+//    
+//    var body: some View {
+//        //        NavigationView {
+//        //            VStack {
+//        Form {
+//            TextField("Name", text: $name)
+//            //                    DatePicker("Date", selection: $date)
+//            TextField("Value 1", text: $value1)
+//                .keyboardType(.numberPad)
+//            //                    TextField("Value 2", text: $value2)
+//            //                        .keyboardType(.decimalPad)
+//            
+//            Button("Save Entry") {
+//                let newEntry = Entry(
+//                    id: UUID(),
+//                    name: name,
+//                    //                            date: date,
+//                    value1: Int(value1) ?? 0,
+//                    //                            value2: Double(value2) ?? 0,
+//                )
+//                dataManager.addEntry(newEntry)
+//                name = ""
+//                value1 = ""
+//                //                        value2 = ""
+//            }
+//        }
         
         //                List {
         //                    ForEach(dataManager.entries) { entry in
@@ -57,12 +56,10 @@ struct AddDrinkView: View {
         //                }
         //            }
         //        }
-    }
-}
+//    }
+//}
 
 
-struct AddDrinkViewTemp: View {
-=======
 //struct AddDrinkView: View {
 //    @StateObject private var dataManager = DataManager()
 //    @State private var name = ""
@@ -115,7 +112,6 @@ struct AddDrinkViewTemp: View {
 
 
 struct AddDrinkView: View {
->>>>>>> 9c2228c (Created basic functionality for a new page (where the add drink functionality will go))
     @Binding var isShowAddButtonView: Bool
     
     var body: some View {
@@ -130,4 +126,3 @@ struct AddDrinkView: View {
         .background(.yellow)
     }
 }
-
