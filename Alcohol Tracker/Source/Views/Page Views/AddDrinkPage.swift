@@ -9,69 +9,49 @@ import SwiftUI
 import Foundation
 
 
-//struct AddDrinkPageView: View {
-//    @StateObject private var dataManager = DataManager()
-//    @State private var name = ""
-//    @State private var value1 = ""
-//    //    @State private var value2 = ""
-//    //    @State private var date = Date()
-//    
-//    var body: some View {
-//        //        NavigationView {
-//        //            VStack {
-//        Form {
-//            TextField("Name", text: $name)
-//            //                    DatePicker("Date", selection: $date)
-//            TextField("Value 1", text: $value1)
-//                .keyboardType(.numberPad)
-//            //                    TextField("Value 2", text: $value2)
-//            //                        .keyboardType(.decimalPad)
-//            
-//            Button("Save Entry") {
-//                let newEntry = Entry(
-//                    id: UUID(),
-//                    name: name,
-//                    //                            date: date,
-//                    value1: Int(value1) ?? 0,
-//                    //                            value2: Double(value2) ?? 0,
-//                )
-//                dataManager.addEntry(newEntry)
-//                name = ""
-//                value1 = ""
-//                //                        value2 = ""
-//            }
-//        }
-//        
-//        //                List {
-//        //                    ForEach(dataManager.entries) { entry in
-//        //                        VStack(alignment: .leading) {
-//        //                            Text(entry.name)
-//        //                                .italic()
-//        ////                            Text(entry.date, style: .date)
-//        //                            Text("Value 1: \(entry.value1)")
-//        ////                            Text("Value 2: \(entry.value2)")
-//        //                        }
-//        //                    }
-//        //                    .onDelete(perform: dataManager.deleteEntry)
-//        //                }
-//        //            }
-//        //        }
-//    }
-//}
+struct AddDrinkPageTopBar: View {
+    @Binding var isShowAddButtonView: Bool
+    
+    var body: some View {
+        HStack {
+            Button {
+                isShowAddButtonView.toggle()
+            } label: {
+                ZStack {
+                    Capsule()
+                        .foregroundStyle(.black)
+                        .frame(maxWidth: 90, maxHeight: 40)
+                    Text("Cancel")
+                        .foregroundStyle(ADD_DRINK_BUTTON_COLOUR)
+                }
+                .padding(.leading).padding(.top)   
+            }
+            
+            Spacer()
+        }
+    }
+}
+
 
 
 struct AddDrinkPageView: View {
     @Binding var isShowAddButtonView: Bool
     
+    
     var body: some View {
         VStack {
-            Text("View 2")
-                .font(.system(size: 50, weight: .bold))
-                .onTapGesture {
-                    isShowAddButtonView.toggle()
-                }
+            AddDrinkPageTopBar(isShowAddButtonView: $isShowAddButtonView)
+            
+            DrinkEntryForm()
+            
+            Spacer()
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.yellow)
+        .background(ADD_DRINK_BUTTON_COLOUR.exposureAdjust(-1))
     }
+}
+
+#Preview {
+    AddDrinkPageView(isShowAddButtonView: .constant(true))
 }

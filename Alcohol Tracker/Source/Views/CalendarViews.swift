@@ -11,7 +11,6 @@ import Foundation
 
 
 struct DayIconView: View {
-//    @Environment(\.colorScheme) var colorScheme
     
     var year: Int
     var month: Int
@@ -114,7 +113,6 @@ struct CalendarView: View {
     var month: Int
     
     var body: some View {
-//        print("b")
         
         ZStack {
             
@@ -139,26 +137,3 @@ struct CalendarView: View {
         
     }
 }
-
-
-//populateCalendar(month: 10, year: CURRENT_YEAR)
-//
-//for row in calendarMatrix {
-//    for column in row {
-//        var toPrint: String = ""
-//        var colStr: String = String(column)
-//        
-//        if colStr.count==1 {
-//            toPrint = " "+colStr
-//            
-//            if column == 0 {
-//                toPrint = "  "
-//            }
-//        } else {
-//            toPrint = colStr
-//        }
-//        
-//        print(toPrint, terminator: "\t")
-//    }
-//    print()
-//}
