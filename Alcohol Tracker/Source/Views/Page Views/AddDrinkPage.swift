@@ -10,6 +10,10 @@ import Foundation
 
 
 let CANCEL_BUTTON_TEXT_COLOUR: Color = colour.accent.primary
+let CANCEL_BUTTON_BACKGROUND_COLOUR: Color = .black
+
+let PAGE_BACKGROUND_COLOUR: Color = colour.accent.primary.exposureAdjust(-1)
+
 
 struct AddDrinkPageTopBar: View {
     @Binding var isShowAddButtonView: Bool
@@ -21,7 +25,7 @@ struct AddDrinkPageTopBar: View {
             } label: {
                 ZStack {
                     Capsule()
-                        .foregroundStyle(.black)
+                        .foregroundStyle(CANCEL_BUTTON_BACKGROUND_COLOUR)
                         .frame(maxWidth: 90, maxHeight: 40)
                     Text("Cancel")
                         .foregroundStyle(CANCEL_BUTTON_TEXT_COLOUR)
@@ -49,7 +53,7 @@ struct AddDrinkPageView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(ADD_DRINK_BUTTON_COLOUR.exposureAdjust(-1))
+        .background(PAGE_BACKGROUND_COLOUR)
     }
 }
 
