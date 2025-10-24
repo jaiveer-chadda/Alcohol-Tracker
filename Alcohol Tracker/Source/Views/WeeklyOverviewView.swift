@@ -9,6 +9,9 @@ import SwiftUI
 import Foundation
 
 
+let OVERVIEW_BACKGROUND_COLOUR: Color = colour.background.tertiary
+
+
 struct WeeklyOverviewView: View {
     
     var body: some View {

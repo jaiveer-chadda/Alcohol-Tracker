@@ -10,6 +10,13 @@ import SwiftUI
 import Foundation
 
 
+let NORMAL_DAY_TEXT_COLOUR: Color = colour.text.primary
+let NUMBER_OVER_CIRCLE_COLOUR: Color = colour.text.contrast
+let TODAY_BORDER_COLOUR: Color = colour.accent.secondary
+
+let CALENDAR_BACKGROUND_COLOUR: Color = colour.background.secondary
+
+
 struct DayIconView: View {
     
     var year: Int
@@ -34,11 +41,10 @@ struct DayIconView: View {
                         .stroke(lineWidth: 2)
                         .foregroundStyle(TODAY_BORDER_COLOUR)
                 }
-                
-                
+
                     
                 Text(String(day))
-                    .foregroundStyle(day <= CURRENT_DAY ? .black : NORMAL_DAY_COLOUR)
+                    .foregroundStyle(day <= CURRENT_DAY ? NUMBER_OVER_CIRCLE_COLOUR : NORMAL_DAY_TEXT_COLOUR)
                 
             }
             

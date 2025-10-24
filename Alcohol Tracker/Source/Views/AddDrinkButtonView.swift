@@ -9,13 +9,17 @@ import SwiftUI
 import Foundation
 
 
+let ADD_DRINK_BUTTON_COLOUR: Color = colour.accent.primary
+let ADD_DRINK_TEXT_COLOUR: Color = .white // it always looks better in white
+
+
 struct AddDrinkButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
 //            .padding()
             .font(Font.system(size: 40, weight: .bold))
             .background(Color(ADD_DRINK_BUTTON_COLOUR))
-            .foregroundColor(.white)
+            .foregroundColor(ADD_DRINK_TEXT_COLOUR)
             .clipShape(Capsule())
     }
 }
