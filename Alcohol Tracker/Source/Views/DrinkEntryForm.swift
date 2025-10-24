@@ -21,15 +21,18 @@ struct DrinkEntryForm: View {
     var body: some View {
         Form {
             Section {
-                TextField("Drink Name", text: $drinkName)
+                TextField("Drink Name (optional)", text: $drinkName)
             }
             Section {
                 TextField("Volume", text: $volume)
                     .keyboardType(.numberPad)
                 TextField("ABV", text: $ABV)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.decimalPad)
             }
-            TextField("Note", text: $note)
+            TextField("Note (optional)", text: $note, axis: .vertical)
+                .multilineTextAlignment(strategy: .writingDirectionBased)
+//                .lineLimit(6)
+                .frame(height: 100, alignment: .topLeading)
             
             Section {
                 Button("Save Entry") {
@@ -37,10 +40,10 @@ struct DrinkEntryForm: View {
                         id: UUID(),
                         date: CURRENT_DATE,
                         
-                        drinkName: drinkName,//.isEmpty == false ? drinkName : "none_given",
+                        drinkName: drinkName.isEmpty == false ? drinkName : "none_given",
                         volume: Int(volume) ?? -1,
                         abv: Double(ABV) ?? -1.0,
-                        note: note//.isEmpty == false ? note : "none_given"
+                        note: note.isEmpty == false ? note : "none_given"
                         
                     )
                     dataManager.addEntry(newEntry)
