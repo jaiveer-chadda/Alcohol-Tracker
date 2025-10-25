@@ -1,5 +1,5 @@
 //
-//  CalendarViews.swift
+//  CalendarWidgetView.swift
 //  Alcohol Tracker
 //
 //  Created by Jaiveer Chadda on 17/10/2025.

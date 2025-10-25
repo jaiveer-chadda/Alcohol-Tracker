@@ -28,7 +28,6 @@ struct MainView: View {
                 AddDrinkPage(isShowAddButtonView: .constant(true) /* the const is temp */)
             }
             
-            
             Tab(isShowExtraDetail ? "Added Drinks" : "", systemImage: "calendar.day.timeline.left") {
                 defaultPage(pageName: "Added Drinks")
             }

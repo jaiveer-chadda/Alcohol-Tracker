@@ -41,6 +41,7 @@ struct AddDrinkPageTopBar: View {
 
 
 struct AddDrinkPage: View {
+    
     @Binding var isShowAddButtonView: Bool
     
     
