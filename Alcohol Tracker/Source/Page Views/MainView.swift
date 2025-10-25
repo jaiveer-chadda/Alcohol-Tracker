@@ -39,7 +39,7 @@ struct MainView: View {
             } label: { TabLabel("Add Drink", "plus.app") }
             
             Tab { /* Added Drinks (History) */
-                defaultPage("hist")
+                AddedDrinksPageView()
             } label: { TabLabel("Added Drinks", "calendar.day.timeline.left") }
             
             Tab { /* Settings */

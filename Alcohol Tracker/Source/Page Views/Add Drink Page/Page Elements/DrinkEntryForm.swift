@@ -18,7 +18,6 @@ struct DrinkEntryForm: View {
     @State private var ABV = ""
     @State private var note = ""
     
-    
     func resetForm() {
         drinkName = ""
         volume = ""
@@ -39,7 +38,6 @@ struct DrinkEntryForm: View {
             }
             TextField("Note (optional)", text: $note, axis: .vertical)
                 .multilineTextAlignment(strategy: .writingDirectionBased)
-//                .lineLimit(6)
                 .frame(height: 100, alignment: .topLeading)
             
             Section {
