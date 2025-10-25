@@ -10,18 +10,18 @@ import Foundation
 
 
 let CANCEL_BUTTON_TEXT_COLOUR: Color = colour.accent.primary
-let CANCEL_BUTTON_BACKGROUND_COLOUR: Color = .black
+let CANCEL_BUTTON_BACKGROUND_COLOUR: Color = Color(.systemGray6) // 28, 28, 30
 
 let PAGE_BACKGROUND_COLOUR: Color = colour.accent.primary.exposureAdjust(-1)
 
 
 struct AddDrinkPageTopBar: View {
-    @Binding var isShowAddButtonView: Bool
+    @Binding var isShowAddDrinkSheet: Bool
     
     var body: some View {
         HStack {
             Button {
-                isShowAddButtonView.toggle()
+                isShowAddDrinkSheet.toggle()
             } label: {
                 ZStack {
                     Capsule()
@@ -30,34 +30,49 @@ struct AddDrinkPageTopBar: View {
                     Text("Cancel")
                         .foregroundStyle(CANCEL_BUTTON_TEXT_COLOUR)
                 }
-                .padding(.leading).padding(.top)   
+                .padding(.leading).padding(.top)
             }
             
             Spacer()
         }
+        
     }
 }
 
 
 
 struct AddDrinkPage: View {
-    
-    @Binding var isShowAddButtonView: Bool
-    
+    @Binding var isShowAddDrinkSheet: Bool
+    @State private var showTopBar = true
+    var source: String = ""
     
     var body: some View {
+        
+        
         VStack {
-            AddDrinkPageTopBar(isShowAddButtonView: $isShowAddButtonView)
-            DrinkEntryForm(isShowAddButtonView: $isShowAddButtonView)
+            if showTopBar {
+                AddDrinkPageTopBar(isShowAddDrinkSheet: $isShowAddDrinkSheet)
+            }
+            DrinkEntryForm(isShowAddDrinkSheet: $isShowAddDrinkSheet)
             
             Spacer()
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(PAGE_BACKGROUND_COLOUR)
+        .onAppear {
+            switch source {
+                case "MainView":
+                    showTopBar = false
+                default:
+                    showTopBar = true
+            }
+        }
+        
+        
     }
 }
 
 #Preview {
-    AddDrinkPage(isShowAddButtonView: .constant(true))
+    AddDrinkPage(isShowAddDrinkSheet: .constant(true))
 }

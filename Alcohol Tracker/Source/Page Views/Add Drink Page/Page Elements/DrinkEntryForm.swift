@@ -10,13 +10,21 @@ import Foundation
 
 
 struct DrinkEntryForm: View {
-    @Binding var isShowAddButtonView: Bool
+    @Binding var isShowAddDrinkSheet: Bool
     
     @StateObject private var dataManager = DataManager()
     @State private var drinkName = ""
     @State private var volume = ""
     @State private var ABV = ""
     @State private var note = ""
+    
+    
+    func resetForm() {
+        drinkName = ""
+        volume = ""
+        ABV = ""
+        note = ""
+    }
     
     var body: some View {
         Form {
@@ -47,14 +55,12 @@ struct DrinkEntryForm: View {
                         
                     )
                     dataManager.addEntry(newEntry)
-                    isShowAddButtonView = false
+                    isShowAddDrinkSheet = false
                     
-                    drinkName = ""
-                    volume = ""
-                    ABV = ""
-                    note = ""
+                    self.resetForm()
                     
                 }
+                .disabled(volume.isEmpty || ABV.isEmpty)
             }
         }
         .scrollContentBackground(.hidden)

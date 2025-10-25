@@ -26,19 +26,19 @@ struct AddDrinkButtonStyle: ButtonStyle {
 
 
 struct AddDrinkButton: View {
-    @State var isShowAddDrinkPage: Bool = false
+    @State var isShowAddDrinkSheet: Bool = false
     
     var body: some View {
         
         Button {
-            isShowAddDrinkPage.toggle()
+            isShowAddDrinkSheet.toggle()
         } label: {
             Text("Add Drink")
                 .frame(width: 300, height: 80)
         }
-        .sheet(isPresented: $isShowAddDrinkPage) {
+        .sheet(isPresented: $isShowAddDrinkSheet) {
 //        .sheet(isPresented: .constant(true)) {
-            AddDrinkPage(isShowAddButtonView: $isShowAddDrinkPage)
+            AddDrinkPage(isShowAddDrinkSheet: $isShowAddDrinkSheet)
         }
         .buttonStyle(AddDrinkButtonStyle())
         .padding(.bottom)

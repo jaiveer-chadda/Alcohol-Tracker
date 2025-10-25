@@ -12,38 +12,52 @@ import Foundation
 var isShowExtraDetail: Bool = userSettings.displayExtraDetail
 
 
+func TabLabel(_ title: String, _ icon: String) -> some View {
+    Label {
+        Text(isShowExtraDetail ? title : "")
+    } icon: {
+        Image(systemName: icon)
+    }
+    .environment(\.symbolVariants, .none)
+}
+
 
 struct MainView: View {
     var body: some View {
         TabView {
-            Tab(isShowExtraDetail ? "Overview" : "", systemImage: "platter.2.filled.iphone") {
+            
+            Tab { /* Overview */
                 OverviewPageView()
-            }
+            } label: { TabLabel("Overview", "sparkle.text.clipboard") }
             
-            Tab(isShowExtraDetail ? "Calendar" : "", systemImage: "calendar") {
-                defaultPage(pageName: "Calendar")
-            }
+            Tab { /* Calendar */
+                defaultPage("cal")
+            } label: { TabLabel("Calendar", "calendar") }
             
-            Tab(isShowExtraDetail ? "Add Drink" : "", systemImage: "plus") {
-                AddDrinkPage(isShowAddButtonView: .constant(true) /* the const is temp */)
-            }
+            Tab { /* Add Drink */
+                AddDrinkPage(isShowAddDrinkSheet: .constant(true), source: "MainView")
+            } label: { TabLabel("Add Drink", "plus.app") }
             
-            Tab(isShowExtraDetail ? "Added Drinks" : "", systemImage: "calendar.day.timeline.left") {
-                defaultPage(pageName: "Added Drinks")
-            }
+            Tab { /* Added Drinks (History) */
+                defaultPage("hist")
+            } label: { TabLabel("Added Drinks", "calendar.day.timeline.left") }
             
-            Tab(isShowExtraDetail ? "Settings" : "", systemImage: "gear") {
-                defaultPage(pageName: "Settings")
-            }
+            Tab { /* Settings */
+                defaultPage("set")
+            } label: { TabLabel("Settings", "gear") }
+            
         }
-        .tint(ADD_DRINK_TAB_COLOUR)
-        
+            
     }
 }
 
 
 struct defaultPage: View {
     var pageName: String
+    
+    init(_ pageName: String) {
+        self.pageName = pageName
+    }
     
     var body: some View {
         
@@ -52,12 +66,12 @@ struct defaultPage: View {
             Color(MAIN_BACKGROUND_COLOUR)
                 .ignoresSafeArea()
                 .frame(width: .infinity, height: .infinity)
-         
+            
             
             Text(pageName)
             
         }
-
+        
     }
 }
 
@@ -65,3 +79,4 @@ struct defaultPage: View {
 #Preview {
     MainView()
 }
+

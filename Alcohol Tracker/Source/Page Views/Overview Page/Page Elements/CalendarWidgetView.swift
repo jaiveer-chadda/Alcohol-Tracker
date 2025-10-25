@@ -63,8 +63,10 @@ struct DaysOfWeekLabelsView: View {
                 .frame(maxWidth: INTERNAL_CALENDAR_MARGIN_HOR)
             ForEach(DAYS_OF_THE_WEEK, id: \.self) { item in
                 Text(item)
+                    .foregroundStyle(NORMAL_DAY_TEXT_COLOUR)
                     .frame(maxWidth: .infinity)
-                    .font(.body).bold()
+                    .font(.body)
+                    .bold()
             }
             Spacer()
                 .frame(maxWidth: INTERNAL_CALENDAR_MARGIN_HOR)
