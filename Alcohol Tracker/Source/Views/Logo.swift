@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-let LOGO_TEXT_COLOUR: Color = colour.text.highlight
+let LOGO_TEXT_COLOUR: Color = colour.text.highlight//.exposureAdjust(-0.2)
 
 
 struct LogoView: View {
