@@ -38,9 +38,10 @@ struct AddDrinkButton: View {
         }
         .sheet(isPresented: $isShowAddDrinkPage) {
 //        .sheet(isPresented: .constant(true)) {
-            AddDrinkPageView(isShowAddButtonView: $isShowAddDrinkPage)
+            AddDrinkPage(isShowAddButtonView: $isShowAddDrinkPage)
         }
         .buttonStyle(AddDrinkButtonStyle())
+        .padding(.bottom)
 
 
     }

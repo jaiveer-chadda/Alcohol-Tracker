@@ -11,7 +11,8 @@ import SwiftUI
 struct Alcohol_TrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            HomePageView()
+//            OverviewPageView()
+            MainView()
         }
     }
 }

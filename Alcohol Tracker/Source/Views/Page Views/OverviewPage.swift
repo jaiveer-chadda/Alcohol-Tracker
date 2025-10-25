@@ -1,5 +1,5 @@
 //
-//  HomePage.swift
+//  OverviewPage.swift
 //  Alcohol Tracker
 //
 //  Created by Jaiveer Chadda on 17/10/2025.
@@ -36,44 +36,42 @@ import SwiftUI
 
 
 let MAIN_BACKGROUND_COLOUR: Color = colour.background.primary
+let ADD_DRINK_TAB_COLOUR: Color = colour.accent.primary
 
 
-struct HomePageView: View {
+struct OverviewPageView: View {
     var body: some View {
         
         ZStack {
             
             Color(MAIN_BACKGROUND_COLOUR)
                 .ignoresSafeArea()
-                /* the .frame modifier below gives a warning, but it works fine
-                    not exacty shure how to fix it :/ */
+            /* the .frame modifier below sometimes gives a warning, but it works fine
+             not exacty shure how to fix it :/ */
                 .frame(width: .infinity, height: .infinity)
-                
+            
             
             
             VStack {
-                                
+                
                 LogoView()
                 
-                Spacer()
+                //                Spacer()
                 
                 CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
                 
-                Spacer()
-                
-                WeeklyOverviewView()
+                //                Spacer()
+                //
+                //                WeeklyOverviewView()
                 
                 Spacer()
                 
                 AddDrinkButton()
+                
                 
             }
             
         }
         
     }
-}
-
-#Preview {
-    HomePageView()
 }

@@ -40,7 +40,7 @@ struct AddDrinkPageTopBar: View {
 
 
 
-struct AddDrinkPageView: View {
+struct AddDrinkPage: View {
     @Binding var isShowAddButtonView: Bool
     
     
@@ -58,5 +58,5 @@ struct AddDrinkPageView: View {
 }
 
 #Preview {
-    AddDrinkPageView(isShowAddButtonView: .constant(true))
+    AddDrinkPage(isShowAddButtonView: .constant(true))
 }
