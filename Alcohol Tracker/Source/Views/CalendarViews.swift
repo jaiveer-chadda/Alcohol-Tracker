@@ -11,7 +11,7 @@ import Foundation
 
 
 let NORMAL_DAY_TEXT_COLOUR: Color = colour.text.primary
-let NUMBER_OVER_CIRCLE_COLOUR: Color = colour.text.contrast
+let NUMBER_OVER_CIRCLE_COLOUR: Color = .black
 let TODAY_BORDER_COLOUR: Color = colour.accent.secondary
 
 let CALENDAR_BACKGROUND_COLOUR: Color = colour.background.secondary

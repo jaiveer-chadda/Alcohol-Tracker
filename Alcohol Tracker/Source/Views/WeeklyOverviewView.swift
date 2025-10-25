@@ -16,14 +16,25 @@ struct WeeklyOverviewView: View {
     
     var body: some View {
         
-        ZStack {
-            RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
-                .fill(Color(OVERVIEW_BACKGROUND_COLOUR))
+        HStack {
             
-            Text("Weekly Overview")
+            ZStack {
+                RoundedRectangle(cornerSize: CGSize(width: 30, height: 30))
+                    .fill(Color(OVERVIEW_BACKGROUND_COLOUR))
+                
+                Text("Weekly Overview")
+            }
+            
+            Capsule()
+                .fill(Color(OVERVIEW_BACKGROUND_COLOUR))
+                .frame(maxWidth: 50)
+                .padding(.leading)
+            
         }
-        .frame(maxHeight: 200)
-        .padding(EdgeInsets(top: 20, leading: LEFT_RIGHT_MARGIN, bottom: 20, trailing: LEFT_RIGHT_MARGIN))
+        .frame(maxHeight: 220)
+        .padding(.horizontal, LEFT_RIGHT_MARGIN)
+        .padding(.vertical)
+        
     }
     
 }
