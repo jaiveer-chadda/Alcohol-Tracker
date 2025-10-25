@@ -18,13 +18,17 @@ struct AddedDrinksPageView: View {
             ForEach(dataManager.entries) { entry in
                 VStack(alignment: .leading) {
                     if entry.drinkName != "none_given" {
-                        Text("Name:\t\t\(entry.drinkName)")
+                        Text("\(Text("Name:").bold())\t\t\(entry.drinkName)")
+                        Text("")
                     }
                     Text("Date:\t\t\(Text(entry.date, style: .date))")
-                    Text("Time:\t\t\(Text(entry.date, style: .time))")
-                    Text("Volume:\t\(entry.volume)")
+                    Text("Time:\t\t\(Text(entry.date, style: .time))  (\(Text(entry.date, style: .relative)) ago)")
+                    Text("")
+                    Text("Volume:\t\(entry.volume) ml")
+                    Text("ABV:\t\t\(String(format: "%.1f", entry.abv))%")
                     if entry.note != "none_given" {
-                        Text("Note:\t\t\(entry.note)")
+                        Text("")
+                        Text("Note:\t\t\(Text(entry.note).italic())")
                     }
 
                 }
