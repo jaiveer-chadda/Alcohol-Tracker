@@ -38,6 +38,7 @@ struct AppColours {
     
     
     struct Text {
+        let highlight: Color = .textHighlight
         let primary: Color = .textPrimary
         let contrast: Color = .textContrast
     }

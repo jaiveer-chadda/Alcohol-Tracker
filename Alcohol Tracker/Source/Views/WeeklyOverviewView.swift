@@ -10,6 +10,7 @@ import Foundation
 
 
 let OVERVIEW_BACKGROUND_COLOUR: Color = colour.background.tertiary
+let PROGRESS_BAR_BACKGROUND_COLOUR: Color = colour.background.tertiary
 
 
 struct WeeklyOverviewView: View {
@@ -26,7 +27,7 @@ struct WeeklyOverviewView: View {
             }
             
             Capsule()
-                .fill(Color(OVERVIEW_BACKGROUND_COLOUR))
+                .fill(Color(PROGRESS_BAR_BACKGROUND_COLOUR))
                 .frame(maxWidth: 50)
                 .padding(.leading)
             

@@ -35,30 +35,37 @@ import SwiftUI
 ///             - (the calendar view, etc. can be done later)
 
 
+let MAIN_BACKGROUND_COLOUR: Color = colour.background.primary
+
+
 struct HomePageView: View {
     var body: some View {
         
-        VStack {
+        ZStack {
             
-            Spacer()
+            Color(MAIN_BACKGROUND_COLOUR)
+                .ignoresSafeArea()
+                .frame(width: .infinity, height: .infinity)
             
-            // placeholder for actual logo
-            Text("Alcohol Tracker")
-                .font(Font.largeTitle.bold())
-                .padding(.bottom)
             
-            Spacer()
-            
-            CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
-            
-            Spacer()
-            
-            WeeklyOverviewView()
-            
-            Spacer()
-            
-            AddDrinkButton()
+            VStack {
+                                
+                LogoView()
                 
+                Spacer()
+                
+                CalendarView(year: CURRENT_YEAR, month: CURRENT_MONTH)
+                
+                Spacer()
+                
+                WeeklyOverviewView()
+                
+                Spacer()
+                
+                AddDrinkButton()
+                
+            }
+            
         }
         
     }
