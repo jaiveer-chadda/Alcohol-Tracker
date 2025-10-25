@@ -45,7 +45,10 @@ struct HomePageView: View {
             
             Color(MAIN_BACKGROUND_COLOUR)
                 .ignoresSafeArea()
+                /* the .frame modifier below gives a warning, but it works fine
+                    not exacty shure how to fix it :/ */
                 .frame(width: .infinity, height: .infinity)
+                
             
             
             VStack {
