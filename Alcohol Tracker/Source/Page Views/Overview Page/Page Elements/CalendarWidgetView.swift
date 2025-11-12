@@ -141,7 +141,8 @@ struct CalendarView: View {
             
         }
         .frame(height: 250)
-        .padding(EdgeInsets(top: CAL_MARGIN_END, leading: LEFT_RIGHT_MARGIN, bottom: CAL_MARGIN_END, trailing: LEFT_RIGHT_MARGIN))
+        .padding(.vertical, CAL_MARGIN_END)
+        .padding(.horizontal, LEFT_RIGHT_MARGIN)
         
     }
 }
