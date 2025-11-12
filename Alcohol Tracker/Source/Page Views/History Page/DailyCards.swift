@@ -8,6 +8,19 @@
 import SwiftUI
 import Foundation
 
+// Formatters
+let timeFormatter: DateFormatter = {
+    let df = DateFormatter()
+    df.timeStyle = .short
+    df.dateStyle = .none
+    return df
+}()
+let relativeFormatter: RelativeDateTimeFormatter = {
+    let rf = RelativeDateTimeFormatter()
+    rf.unitsStyle = .full
+    return rf
+}()
+
 
 struct DailyCardsView: View {
     @StateObject private var dataManager = DataManager()
@@ -75,43 +88,33 @@ struct CardDetails: View {
     var abv: Double
     var note: String
     
-    
-    
     var body: some View {
-        // Entries
-        HStack {
-            Text("Time")
-            Spacer()
-            Text("\(Text(time, style: .time))  (\(Text(time, style: .relative)) ago)")
-        }
-        .font(.system(size: 16, weight: .regular))
-        .padding(.vertical)
-        
-        HStack {
-            Text("Volume")
-            Spacer()
-            Text("\(volume) ml")
-        }
-        .font(.system(size: 16, weight: .regular))
-        .padding(.vertical)
-        
-        HStack {
-            Text("ABV")
-            Spacer()
-            Text("\(String(format: "%.1f", abv))%")
-        }
-        .font(.system(size: 16, weight: .regular))
-        .padding(.vertical)
-        if note != "none_given" {
-            HStack {
-                Text("Note")
-                Spacer()
-                Text("\(Text(note).italic())")
+
+        let timeString = timeFormatter.string(from: time)
+        let relativeString = relativeFormatter.localizedString(for: time, relativeTo: Date())
+
+        let baseRows: [(title: String, value: String, isNote: Bool)] = [
+            ("Time", "\(timeString) (\(relativeString))", false),
+            ("Volume", "\(volume) ml", false),
+            ("ABV", "\(String(format: "%.1f", abv))%", false)
+        ]
+        let includeNote = note != "none_given" && !note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let rows: [(title: String, value: String, isNote: Bool)] = includeNote
+            ? baseRows + [("Note", note, true)]
+            : baseRows
+
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
+                HStack {
+                    Text(row.title)
+                    Spacer()
+                    let valueText = Text(row.value)
+                    (row.isNote ? valueText.italic() : valueText)
+                }
+                .font(.system(size: 16, weight: .regular))
+                .padding(.vertical)
             }
-            .font(.system(size: 16, weight: .regular))
-            .padding(.vertical)
         }
-        
     }
 }
 
@@ -133,3 +136,4 @@ struct DailyCard: View {
         .cornerRadius(20)
     }
 }
+
