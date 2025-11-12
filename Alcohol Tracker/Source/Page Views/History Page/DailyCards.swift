@@ -21,27 +21,11 @@ struct DailyCardsView: View {
             }
             .onDelete(perform: dataManager.deleteEntry)
             
-//            ForEach(dataManager.entries) { entry in
-//                VStack(alignment: .leading) {
-//                    if entry.drinkName != "none_given" {
-//                        Text("\(Text("Name:").bold())\t\t\(entry.drinkName)")
-//                        Text("")
-//                    }
-//                    Text("Date:\t\t\(Text(entry.date, style: .date))")
-//                    Text("Time:\t\t\(Text(entry.date, style: .time))  (\(Text(entry.date, style: .relative)) ago)")
-//                    Text("")
-//                    Text("Volume:\t\(entry.volume) ml")
-//                    Text("ABV:\t\t\(String(format: "%.1f", entry.abv))%")
-//                    if entry.note != "none_given" {
-//                        Text("")
-//                        Text("Note:\t\t\(Text(entry.note).italic())")
-//                    }
-//
-//                }
-//            }
-//            .onDelete(perform: dataManager.deleteEntry)
         }
         .padding(.top)
+        .onAppear {
+            dataManager.loadEntries()
+        }
     }
 }
 
@@ -51,16 +35,14 @@ struct CardTitle: View {
     var date: Date
     
     var body: some View {
-        // Day & Price
+        // Name & Date
         HStack {
-//            Text("24 Feb - Thursday")
             if drinkName != "none_given" {
                 Text(drinkName)
             } else {
                 Text("Drink")
             }
             Spacer()
-//            Text("$86")
             Text(date, style: .date)
         }
         .font(.system(size: 20, weight: .medium))
@@ -93,21 +75,10 @@ struct CardDetails: View {
     var abv: Double
     var note: String
     
-//    Text("Time:\t\t\(Text(entry.date, style: .time))  (\(Text(entry.date, style: .relative)) ago)")
-//    Text("")
-//    Text("Volume:\t\(entry.volume) ml")
-//    Text("ABV:\t\t\(String(format: "%.1f", entry.abv))%")
-//    if entry.note != "none_given" {
-//        Text("")
-//        Text("Note:\t\t\(Text(entry.note).italic())")
-//    }
+    
     
     var body: some View {
-        // Transaction Entries
-//        ForEach(0..<5) { _ in // Replace with your data model here
-//            DetailLine()
-//        }
-        
+        // Entries
         HStack {
             Text("Time")
             Spacer()
@@ -141,17 +112,6 @@ struct CardDetails: View {
             .padding(.vertical)
         }
         
-
-//        let timeInfo: String = "\(Text(time, style: .time))  (\(Text(time, style: .relative)) ago)"
-//        DetailLine(title: "Time", info: timeInfo)
-//        let volumeInfo: String = "\(volume) ml"
-//        DetailLine(title: "Volume", info: volumeInfo)
-//        let abvInfo: String = "\(String(format: "%.1f", abv))%"
-//        DetailLine(title: "ABV", info: abvInfo)
-//        if note != "none_given" {
-//            let noteInfo: String = "\(Text(note).italic())"
-//            DetailLine(title: "Note", info: noteInfo)
-//        }
     }
 }
 
