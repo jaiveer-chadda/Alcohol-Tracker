@@ -1,5 +1,5 @@
 //
-//  AddedDrinksPage.swift
+//  HisstoryPage.swift
 //  Alcohol Tracker
 //
 //  Created by Jaiveer Chadda on 25/10/2025.
@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct AddedDrinksPageView: View {
+struct HistoryPageView: View {
     @StateObject private var dataManager = DataManager()
     
     var body: some View {
