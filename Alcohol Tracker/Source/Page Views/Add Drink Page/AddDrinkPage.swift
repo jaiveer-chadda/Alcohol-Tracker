@@ -53,7 +53,6 @@ struct AddDrinkPage: View {
             }
             DrinkEntryForm(isShowAddDrinkSheet: $isShowAddDrinkSheet)
             
-            Spacer()
         }
 //        .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
