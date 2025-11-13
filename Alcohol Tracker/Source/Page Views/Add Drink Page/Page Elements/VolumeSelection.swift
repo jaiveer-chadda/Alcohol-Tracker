@@ -17,6 +17,15 @@ let VOLUME_TYPE_IMAGES: [String: String] = [
     "Custom": "questionmark.app.dashed"
 ]
 
+let VOLUME_NAMES: [String: Int] = [
+    "Pint": 568,
+    "Half Pint": 284,
+    "Bottle": 330,
+    "Can": 440,
+    "Small Can": 355,
+    "Custom": -1
+]
+
 struct VolumeOption: View {
     var volumeType: String
     
@@ -35,13 +44,23 @@ struct VolumeOption: View {
                     .frame(height: 25)
                     .padding(.top, 2)
                 Spacer()
-                Text(volumeType)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 2)
+                VStack {
+                    if volumeType == "Custom" { Spacer() }
+                    Text(volumeType)
+                        .multilineTextAlignment(.center)
+                    
+                    if volumeType != "Custom" {
+                        Text("\(String(VOLUME_NAMES[volumeType] ?? -1))ml")
+                            .font(.subheadline)
+                            .foregroundStyle(.primary.opacity(0.5))
+                    } else {
+                        Spacer()
+                    }
+                }
             }
             .padding()
         }
-        .frame(height: 100)
+        .frame(minHeight: 100)
         .onTapGesture { selectedVolume = volumeType }
     }
 }
@@ -53,8 +72,8 @@ struct VolumeSelection: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            Text(" Volume")
-                .font(.title2)
+//            Text(" Volume")
+//                .font(.title2)
             HStack {
                 VolumeOption(volumeType: "Pint", selectedVolume: $selectedVolume)
                 VolumeOption(volumeType: "Half Pint", selectedVolume: $selectedVolume)

@@ -40,8 +40,8 @@ struct DrinkEntryForm: View {
     @State private var ABV = ""
     @State private var note = ""
     
-    @State private var selectedDrinkType: String = "Other"
-    @State private var selectedVolume: String = "0"
+    @State private var selectedDrinkType: String = "Beer"
+    @State private var selectedVolume: String = "Pint"
     
     func resetForm() {
         drinkName = ""
