@@ -61,9 +61,7 @@ struct DailyCard: View {
             }
             .font(.system(size: 22, weight: .medium))
             
-            Capsule()
-                .frame(height: 1)
-                .opacity(0.4)
+            Separator(opacity: 0.4)
             
             HStack {
                 Text(formattedTime)
@@ -78,10 +76,7 @@ struct DailyCard: View {
             }
             
             if note != "none_given" {
-                Capsule()
-                    .frame(height: 1)
-                    .opacity(0.1)
-                
+                Separator(opacity: 0.1)
                 Text(note)
                 
             }
