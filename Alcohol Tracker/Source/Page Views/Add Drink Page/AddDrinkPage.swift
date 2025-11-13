@@ -12,7 +12,7 @@ import Foundation
 let CANCEL_BUTTON_TEXT_COLOUR: Color = colour.accent.primary
 let CANCEL_BUTTON_BACKGROUND_COLOUR: Color = Color(.systemGray6) // 28, 28, 30
 
-let PAGE_BACKGROUND_COLOUR: Color = colour.accent.primary.exposureAdjust(-1)
+let PAGE_BACKGROUND_COLOUR: Color = colour.background.primary //colour.accent.primary.exposureAdjust(-1)
 
 
 struct AddDrinkPageTopBar: View {
