@@ -30,9 +30,9 @@ struct AddDrinkPageTopBar: View {
                     Text("Cancel")
                         .foregroundStyle(CANCEL_BUTTON_TEXT_COLOUR)
                 }
-                .padding(.leading).padding(.top)
+                .padding(.leading)
+//                .padding(.top)
             }
-            
             Spacer()
         }
         
@@ -47,8 +47,6 @@ struct AddDrinkPage: View {
     var source: String = ""
     
     var body: some View {
-        
-        
         VStack {
             if showTopBar {
                 AddDrinkPageTopBar(isShowAddDrinkSheet: $isShowAddDrinkSheet)
@@ -56,8 +54,8 @@ struct AddDrinkPage: View {
             DrinkEntryForm(isShowAddDrinkSheet: $isShowAddDrinkSheet)
             
             Spacer()
-            
         }
+//        .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(PAGE_BACKGROUND_COLOUR)
         .onAppear {
